@@ -5,7 +5,7 @@
     <p>{{ $post->content }}</p>
     <small>Posted by {{ $post->user->name }} on {{ $post->created_at->format('d M Y') }}</small>
 
-    <h2>Comments:</h2>
+    <h3>Comments:</h3>
     <ul>
         @foreach($post->comments as $comment)
             <li>
