@@ -30,7 +30,7 @@ class PostController extends Controller
         ]);
 
         Post::create([
-            'user_id' => Auth::id(), // Assuming you have user authentication
+            'user_id' => Auth::id(), 
             'title' => $request->title,
             'content' => $request->content,
         ]);
@@ -52,7 +52,6 @@ class PostController extends Controller
         return view('posts.edit', compact('post'));
     }
 
-    // Update the specified post in storage
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -66,7 +65,6 @@ class PostController extends Controller
         return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
     }
 
-    // Remove the specified post from storage
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
